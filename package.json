@@ -1,7 +1,7 @@
 {
   "name": "sturn",
   "version": "0.0.1",
-  "description": "simple util to get a webrtc peer connection config.",
+  "description": "simple util to get available stun and turn servers for a webrtc peer connection.",
   "main": "index.js",
   "directories": {
     "test": "test"

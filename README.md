@@ -1,7 +1,7 @@
 sturn
 ====
 
-  Return a **[peer](http://github.com/bredele/peer)** connection with available stun and turn servers.
+  Return a **[peer](http://github.com/bredele/peer)** connection configruation with available stun and turn servers.
 
 ## Installation
 
@@ -11,7 +11,6 @@ with [nodejs](http://nodejs.org):
 
 
 ## Usage
-
 
 ```js
 var rate = require('sturn');
@@ -29,6 +28,7 @@ sturn(function(config) {
 
 ```js
 sturn.stun();
+```
 
 ### Turn
 
@@ -38,6 +38,7 @@ sturn.stun();
 sturn.turn(function() {
 	
 });
+```
 
 ## License
 
