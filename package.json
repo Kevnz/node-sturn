@@ -1,7 +1,7 @@
 {
   "name": "sturn",
-  "version": "0.0.0",
-  "description": "request turn and stun server for webrtc apps",
+  "version": "0.0.1",
+  "description": "simple util to get a webrtc peer connection config.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -11,19 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bredele/turn.git"
+    "url": "git://github.com/bredele/sturn.git"
   },
   "keywords": [
     "webrtc",
+    "peer",
     "stun",
     "turn"
   ],
   "author": "Olivier Wietrich <olivier.wietrich@gmail.com> (http://github.com/bredele)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bredele/turn/issues"
+    "url": "https://github.com/bredele/sturn/issues"
   },
-  "homepage": "https://github.com/bredele/turn",
+  "homepage": "https://github.com/bredele/sturn",
   "dependencies": {
     "request": "^2.34.0"
   }

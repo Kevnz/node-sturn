@@ -15,8 +15,10 @@ var request = require('request');
 
 var turn = 'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913';
 
+
 /**
  * List of available stun servers.
+ * NOTE: right now we just return the first one
  * @type {Array}
  */
 
@@ -46,15 +48,26 @@ var stun = [
 module.exports = sturn;
 
 
+/**
+ * Return a sturn and turn peer
+ * connection config.
+ * 
+ * @param  {Function} fn
+ * @return {Object}
+ * @api public
+ */
+
 function sturn(fn) {
-  // NOTE: right now we don't return a random server
+  // NOTE: for firefox we should return
+  // the ip address
   var servers = {
     iceServers : [{
       'url': stun[0]
     }]
   };
   sturn.turn(function(body) {
-    console.log(body);
+    servers.iceServers.push(body);
+    fn(servers);
   });
 };
 
@@ -72,7 +85,8 @@ sturn.turn = function(fn) {
     if (!error && response.statusCode == 200) {
       var server = JSON.parse(body);
       fn({
-        'url' : 'turn:' + server.username + '@' + server.turn,
+        'url' : server.uris[0],
+        'username': server.username,
         'credential' : server.password
       });
     }
