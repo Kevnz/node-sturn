@@ -61,14 +61,29 @@ function sturn(fn) {
   // NOTE: for firefox we should return
   // the ip address
   var servers = {
-    iceServers : [{
-      'url': stun[0]
-    }]
+    iceServers : [sturn.stun()]
   };
   sturn.turn(function(body) {
     servers.iceServers.push(body);
     fn(servers);
   });
+};
+
+
+/**
+ * Return available stun server metadata.
+ *
+ * Right now it always return stun.l.google.com:19302
+ * until we check each stun server connection.
+ * 
+ * @return {Object}
+ * @api public
+ */
+
+sturn.stun = function() {
+  return {
+    url: stun[0]
+  };
 };
 
 
