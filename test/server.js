@@ -1,5 +1,5 @@
 var sturn = require('..');
 
-sturn.turn(function(res) {
+sturn(function(res) {
 	console.log(res);
 });
