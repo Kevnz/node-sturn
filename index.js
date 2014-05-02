@@ -1,37 +1,39 @@
 
 /**
- * Expose 'turn'
+ * Modules dependencies.
+ * @api private
  */
 
-module.exports = turn;
+var request = require('request');
 
 
-function request(url, fn) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      fn(JSON.parse(xhr.responseText));
-    }
-  };
-  xhr.send();
-}
+var url = 'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913';
+
 
 /**
- * turn constructor.
+ * Expose 'sturn'
+ */
+
+module.exports = sturn;
+
+
+/**
+ * sturn constructor.
  * @api public
  */
 
-function turn(url) {
-  url = url || 'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913';
-  return function(peer) {
-    request(url, function(server) {
-      var servers = peer.get('servers');
-      servers.iceServers.push({
-        'url' : 'turn:' + server.username + '@' + server.turn,
-        'credential' : server.password
-      });
-      peer.set('servers', servers);
-    });
-  };
+function sturn(fn) {
 }
+
+
+sturn.stun = function(fn) {
+
+};
+
+sturn.turn = function(fn) {
+  request(url, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      console.log(body) // Print the google web page
+    }
+  });
+};

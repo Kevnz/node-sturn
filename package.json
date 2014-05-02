@@ -1,0 +1,30 @@
+{
+  "name": "sturn",
+  "version": "0.0.0",
+  "description": "request turn and stun server for webrtc apps",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bredele/turn.git"
+  },
+  "keywords": [
+    "webrtc",
+    "stun",
+    "turn"
+  ],
+  "author": "Olivier Wietrich <olivier.wietrich@gmail.com> (http://github.com/bredele)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bredele/turn/issues"
+  },
+  "homepage": "https://github.com/bredele/turn",
+  "dependencies": {
+    "request": "^2.34.0"
+  }
+}
