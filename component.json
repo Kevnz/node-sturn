@@ -1,0 +1,17 @@
+{
+  "name": "turn",
+  "repo": "bredele/turn",
+  "description": "peer plugin to request turn server on demand.",
+  "version": "0.0.0",
+  "keywords": [],
+  "dependencies": {},
+  "development": {
+    "bredele/peer": "*",
+    "bredele/channel": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
