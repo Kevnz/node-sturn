@@ -13,7 +13,7 @@ with [nodejs](http://nodejs.org):
 ## Usage
 
 ```js
-var rate = require('sturn');
+var sturn = require('sturn');
 
 sturn(function(config) {
 	// do something on config
