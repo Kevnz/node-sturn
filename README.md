@@ -1,8 +1,7 @@
-turn
+sturn
 ====
 
-peer plugin to compute a turn server on demand from appspot
-
+  Return a **[peer](http://github.com/bredele/peer)** connection with available stun and turn servers.
 
 ## Installation
 
