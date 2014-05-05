@@ -82,7 +82,7 @@ function sturn(fn) {
 
 sturn.stun = function() {
   return {
-    url: stun[0]
+    url: 'stun:' + stun[0]
   };
 };
 
